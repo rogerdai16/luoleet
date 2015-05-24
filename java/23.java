@@ -4,7 +4,8 @@ public class Solution {
 
 	public ListNode mergeKLists(ListNode[] lists) {
 		if (lists == null || lists.length == 0) return null;
-		this.pq = new PriorityQueue < ListNode > (lists.length, new Comparator < ListNode > () {@Override
+		this.pq = new PriorityQueue < ListNode > (lists.length, new Comparator < ListNode > () {
+			@Override
 			public int compare(ListNode arg0, ListNode arg1) {
 				if (arg0.val > arg1.val) return 1;
 				if (arg0.val < arg1.val) return -1;

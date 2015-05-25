@@ -30,18 +30,24 @@ public class Solution {
         }
         return true;
     }
+    
+    public void solveSudoku(char[][] board){
+        boolean rst = solveSudokuHelper(board);
+    }
 
-    public void solveSudoku(char[][] board) {
+    private boolean solveSudokuHelper(char[][] board) {
         for(int i = 0; i < 9; i++){
             for(int j = 0; j < 9; j++){
                 if(board[i][j] == '.'){
                     for(int num = 0; num < 9; num++){
                         board[i][j] = (char)('1' + num);
-                        if(!isValidSudoku(board, i, j)) board[i][j] = '.';
-                        else solveSudoku(board);
+                        if(isValidSudoku(board, i, j) && solveSudokuHelper(board)) return true;
+                        else board[i][j] = '.';
                     }
+                    return false;
                 }
             }
         }
+        return true;
     }
 }

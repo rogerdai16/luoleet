@@ -21,7 +21,6 @@ public class Solution {
 		return rst;
 	}
 
-
 	public LinkedList < TreeNode > generateTrees(int n) {
 		if (n <= 0) return generate(1, n);
 		return generate(1, n);

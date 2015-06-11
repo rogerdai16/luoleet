@@ -1,6 +1,5 @@
 public class FindPrime {
-	
-	
+
 	public static void find(int n){
 		if(n <= 1) return;
 		boolean[] visited = new boolean[n + 1];
@@ -22,4 +21,4 @@ public class FindPrime {
 	public static void main(String[] args) {
 		find(11);
 	}
-
+}

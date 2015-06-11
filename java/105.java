@@ -11,9 +11,7 @@ class Solution {
 	}
 
 	public TreeNode buildTree(int[] preorder, int[] inorder) {
-		if (preorder.length != inorder.length)
-			return null;
-		return buildHelper(preorder, 0, preorder.length - 1, inorder, 0,
-				inorder.length - 1);
+		if (preorder.length != inorder.length) return null;
+		return buildHelper(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
 	}
 }

@@ -7,7 +7,7 @@ public class Solution {
         int left = 0;
         int rst = 1;
         while(right < s.length()){
-            if(repeat[s.charAt(right)] >= left)left = repeat[s.charAt(right)] + 1;
+            if(repeat[s.charAt(right)] >= left) left = repeat[s.charAt(right)] + 1;
             repeat[s.charAt(right)] = right;
             rst = Math.max(rst, right - left + 1);
             right++;

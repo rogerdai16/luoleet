@@ -7,11 +7,8 @@ public class Solution {
 			this.right = right;
 		}
 		public String toString() {
-			if (left == right) {
-				return Integer.toString(left);
-			} else {
-				return Integer.toString(left) + "->" + Integer.toString(right);
-			}
+			if (left == right)return Integer.toString(left);
+			return Integer.toString(left) + "->" + Integer.toString(right);
 		}
 	}
 	public List < String > findMissingRanges(int[] A, int lower, int upper) {

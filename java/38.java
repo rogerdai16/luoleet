@@ -16,7 +16,6 @@ public class Solution {
         return sb.toString();
     }
     
-    
     public String countAndSay(int n) {
         String rst = "1";
         while(--n != 0){

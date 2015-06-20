@@ -10,7 +10,6 @@ public class Solution {
         else return value * value * x;
     }
     
-    
     public double myPow(double x, int n) {
         return myPowHelper(x, (long)n);
     }

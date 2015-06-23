@@ -32,7 +32,7 @@ public class LRUCache {
         return ret.value;
 
     }
-    public void refresh(Node node){
+    private void refresh(Node node){
         if(node==head.next) return ;
         Node temp=head.next ; //head node in the map;
         Node nodePre=node.pre;

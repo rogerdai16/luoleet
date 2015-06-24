@@ -7,8 +7,8 @@ public class Solution {
         while (i < Math.sqrt(n)) {
             if (nonPrime[i - 1] == false) {
                 int j = i * 2;
-                while (j <= n) {
-                    if (j != n && nonPrime[j - 1] == false) rst--;
+                while (j < n) {
+                    if (nonPrime[j - 1] == false) rst--;
                     nonPrime[j - 1] = true;
                     j += i;
                 }

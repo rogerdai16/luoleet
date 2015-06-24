@@ -4,7 +4,8 @@ public class Solution {
         boolean[] nonPrime = new boolean[n];
         int rst = n - 2;
         int i = 2;
-        while (i < Math.sqrt(n)) {
+        double end = Math.sqrt(n);
+        while (i < end) {
             if (nonPrime[i - 1] == false) {
                 int j = i * 2;
                 while (j < n) {

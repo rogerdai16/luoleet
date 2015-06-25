@@ -18,7 +18,18 @@ public class CoinChange {
         return dp[n][m - 1];
     }
 
+    public static long coinChangeCom(int n, int[] coins){
+        if(n <= 0 || coins == null || coins.length == 0) return 0;
+        int m = coins.length;
+        long[] dp = new long[n + 1];
+        dp[0] = 1;
+        for (int i = 0; i < m; i++)
+            for (int j = coins[i]; j <= n; j++)
+                dp[j] += dp[j - coins[i]];
+        return dp[n];
+    }
+
     public static void main(String[] args){
-        System.out.println("The coins change is " + coinChange(10, new int[]{1, 3}));
+        System.out.println("The coins change is " + coinChangeCom(5, new int[]{1, 3}));
     }
 }

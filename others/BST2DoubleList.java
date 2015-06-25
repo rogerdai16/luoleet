@@ -43,6 +43,7 @@ public class BST2DoubleList {
         TreeNode root = me.new TreeNode(2);
         root.left = me.new TreeNode(1);
         root.right = me.new TreeNode(3);
+        root.left.right = me.new TreeNode(9);
         TreeNode head = me.convert(root);
     }
 }

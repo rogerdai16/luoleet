@@ -1,4 +1,4 @@
-# 精讲Leetcode题目
+# Leetcode题解
 ***
 #### [戴清灏](mailto:rogerdai16@gail.com)
 

@@ -18,10 +18,9 @@ public class RegularExpression {
             }
             if (s.charAt(sPos) != p.charAt(pPos) && p.charAt(pPos) != '.') {
                 //no *, match failed
-                if (pPos < p.length() - 1 && p.charAt(pPos + 1) != '*')
-                    return false;
-                //skip the *
-                return _isMatch(s, sPos, p, pPos + 2);
+                if (pPos < p.length() - 1 && p.charAt(pPos + 1) == '*')
+                    return _isMatch(s, sPos, p, pPos + 2);
+                return false;
             }
             if (pPos == p.length() - 1 || p.charAt(pPos + 1) != '*') return _isMatch(s, sPos + 1, p, pPos + 1);
             return _isMatch(s, sPos + 1, p, pPos) || _isMatch(s, sPos, p, pPos + 2);

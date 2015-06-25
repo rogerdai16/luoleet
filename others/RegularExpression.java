@@ -10,9 +10,9 @@ public class RegularExpression {
         }
 
         private boolean _isMatch(String s, int sPos, String p, int pPos) {
-            if (sPos >= s.length() || pPos >= p.length()) {
-                if (sPos >= s.length() && pPos >= p.length()) return true;
-                if (sPos >= s.length() && pPos < p.length() - 1 && p.charAt(pPos + 1) == '*')
+            if (sPos == s.length() || pPos == p.length()) {
+                if (sPos == s.length() && pPos == p.length()) return true;
+                if (sPos == s.length() && pPos < p.length() - 1 && p.charAt(pPos + 1) == '*')
                     return _isMatch(s, sPos, p, pPos + 2);
                 return false;
             }
@@ -25,5 +25,12 @@ public class RegularExpression {
             if (pPos == p.length() - 1 || p.charAt(pPos + 1) != '*') return _isMatch(s, sPos + 1, p, pPos + 1);
             return _isMatch(s, sPos + 1, p, pPos) || _isMatch(s, sPos, p, pPos + 2);
         }
+    }
+
+    public static void main(String[] args){
+        RegularExpression me = new RegularExpression();
+        Solution s = me.new Solution();
+        System.out.println(s.isMatch("abcd", "abcd"));
+        System.out.println(s.isMatch("abcd", "abd"));
     }
 }

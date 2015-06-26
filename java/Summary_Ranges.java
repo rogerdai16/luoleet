@@ -5,13 +5,13 @@ public class Solution {
         int last = nums[0];
         int start = nums[0];
         for(int i = 1; i < nums.length; i++){
-            if(nums[i] == last + 1)last = nums[i];
-            else{
+            if(nums[i] != last + 1){
                 if(start != last) rst.add(String.valueOf(start) + "->" + String.valueOf(last));
                 else rst.add(String.valueOf(start));
                 start = nums[i];
                 last = nums[i];
             }
+            last = nums[i];
         }
         if(start != last) rst.add(String.valueOf(start) + "->" + String.valueOf(last));
         else rst.add(String.valueOf(start));

@@ -30,7 +30,7 @@ public class RegularExpression {
     public static void main(String[] args){
         RegularExpression me = new RegularExpression();
         Solution s = me.new Solution();
-        System.out.println(s.isMatch("abcd", "abcd"));
-        System.out.println(s.isMatch("abcd", "abd"));
+//        System.out.println(s.isMatch("abcd", "abcd"));
+        System.out.println(s.isMatch("abcd", "a.*A*"));
     }
 }

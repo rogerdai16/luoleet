@@ -6,8 +6,7 @@ public class Solution {
             return;
         }
         if(path.size() > k) return;
-        for(int i = idx + 1; i <= 9; i++){
-            if(i > gap) return;
+        for(int i = idx + 1; i <= 9 && i <= gap; i++){
             path.add(i);
             dfs(i, path, rst, gap - i, k);
             path.remove(path.size() - 1);

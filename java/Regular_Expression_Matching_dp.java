@@ -14,7 +14,7 @@ public class Solution {
                     char sc = s.charAt(i - 1);
                     char pc = p.charAt(j - 1);
                     if(sc == pc || pc == '.') dp[i][j] = dp[i - 1][j - 1];
-                    else if(pc == '*' && j > 1){
+                    else if(j > 1 && pc == '*'){
                         if( (sc == p.charAt(j - 2) || p.charAt(j -2) == '.') && dp[i - 1][j]) dp[i][j] = true;
                         else dp[i][j] = dp[i][j -2];
                     }

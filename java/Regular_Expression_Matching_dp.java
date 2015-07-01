@@ -9,7 +9,7 @@ public class Solution {
                 if(j == 0){
                     dp[i][j] = i == 0;
                 }else if(i == 0){
-                    dp[i][j] = j > 1 && p.charAt(j - 1) == '*' && (dp[i][j - 1] || dp[i][j - 2]);
+                    if(j > 1 && p.charAt(j - 1) == '*') dp[i][j] = dp[i][j - 1] || dp[i][j - 2];
                 }else{
                     char sc = s.charAt(i - 1);
                     char pc = p.charAt(j - 1);

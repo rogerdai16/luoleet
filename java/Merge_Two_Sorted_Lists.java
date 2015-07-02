@@ -5,10 +5,8 @@ public class Solution {
         if(l2 == null && l1 != null) return l1;
         ListNode dummy = new ListNode(-1);
         ListNode prev = dummy;
-        while(l1 != null || l2 != null){
-            int v1 = l1 == null? Integer.MAX_VALUE : l1.val;
-            int v2 = l2 == null? Integer.MAX_VALUE : l2.val;
-            if(v1 < v2){
+        while(l1 != null && l2 != null){
+            if(l1.val < l2.val){
                 prev.next = l1;
                 l1 = l1.next;
             }else{
@@ -17,7 +15,7 @@ public class Solution {
             }
             prev = prev.next;
         }
-        prev.next = null;
+        prev.next = l1 == null? l2 : l1;
         return dummy.next;
     }
 }

@@ -16,8 +16,8 @@ public class RemoveRangeFromBST {
 
     public static TreeNode removeRange(TreeNode root, int min, int max){
         if(root == null) return null;
-        root.left = removeRange(root.left, min, max); // ??????root.left?????TreeNode
-        root.right = removeRange(root.right, min, max); // ??????root.right?????TreeNode
+        root.left = removeRange(root.left, min, max); // ???root.left????TreeNode
+        root.right = removeRange(root.right, min, max); // ???root.right????TreeNode
         if(root.val < min){
             return root.right;
         }else if(root.val > max){

@@ -43,6 +43,6 @@ public class PhoneLetterCombination {
     }
     public static void main(String[] args){
         PhoneLetterCombination me = new PhoneLetterCombination();
-        for(String s : me.phoneNumVar("222")) System.out.println(s);
+        for(String s : me.phoneNumVar("23456789")) System.out.println(s);
     }
 }

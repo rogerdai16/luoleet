@@ -4,8 +4,8 @@ public class Solution {
 		long denomina = (long) denominator;
 		StringBuilder rst = new StringBuilder();
 		if(Math.abs(Math.signum(numerat) - Math.signum(denomina)) >= 2)rst.append("-");
-		numerat = numerat <= 0? -numerat : numerat;
-		denomina = denomina <= 0? -denomina : denomina;
+		numerat = Math.abs(numerat);
+		denomina = Math.abs(denomina);
 		rst.append(String.valueOf(numerat / denomina));
 		long mod = numerat % denomina;
 		if (mod == 0)return rst.toString();

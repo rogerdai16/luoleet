@@ -6,7 +6,7 @@ public class Solution {
 		if(Math.abs(Math.signum(numerat) - Math.signum(denomina)) >= 2)rst.append("-");
 		numerat = Math.abs(numerat);
 		denomina = Math.abs(denomina);
-		rst.append(String.valueOf(numerat / denomina));
+		rst.append(numerat / denomina);
 		long mod = numerat % denomina;
 		if (mod == 0)return rst.toString();
 		rst.append(".");
@@ -24,6 +24,5 @@ public class Solution {
 			mod = (mod * 10) % denominator;
 		}
 		return rst.toString();
-
 	}
 }

@@ -29,14 +29,16 @@ public class InsertCircularDoublelyLinkedList {
 
     public static void main(String[] args){
         ListNode one = new ListNode(1);
-        one.next = new ListNode(2);
-        one.next.prev = one;
-        one.next.next = new ListNode(4);
-        one.next.next.prev = one.next;
-        one.next.next.next = one;
-        one.prev = one.next.next; // 1 - 2 - 4
+        one.next = one;
+        one.prev = one;
+//        one.next = new ListNode(2);
+//        one.next.prev = one;
+//        one.next.next = new ListNode(4);
+//        one.next.next.prev = one.next;
+//        one.next.next.next = one;
+//        one.prev = one.next.next; // 1 - 2 - 4
         ListNode head = one;
-        head = insertNode(head, 1);
+        head = insertNode(head, 3);
         for(int i = 0; i < 8; i++) {
             System.out.println(head.val);
             head = head.next;

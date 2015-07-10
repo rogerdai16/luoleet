@@ -1,6 +1,6 @@
 public class Solution {
-    public ArrayList<ArrayList<Integer>> threeSum(int[] nums) {
-        ArrayList<ArrayList<Integer>> rst = new ArrayList<ArrayList<Integer>>();
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> rst = new LinkedList<List<Integer>>();
         if(nums == null || nums.length < 3) return rst;
         Arrays.sort(nums);
         for(int i = 0; i < nums.length; i++){
@@ -10,7 +10,7 @@ public class Solution {
             int curr = nums[i];
             while(left < right){
                 if(curr + nums[left] + nums[right] == 0){
-                    ArrayList<Integer> tmp = new ArrayList<Integer>();
+                    LinkedList<Integer> tmp = new LinkedList<Integer>();
                     tmp.add(curr);
                     tmp.add(nums[left]);
                     tmp.add(nums[right]);

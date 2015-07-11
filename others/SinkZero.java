@@ -31,16 +31,18 @@ public class SinkZero {
         while(!st.isEmpty()){
             TreeNode curr = st.pop();
             if(!isLeaf(curr))result.push(curr);
-            if(curr.left != null) result.push(curr.left);
-            if(curr.right != null) result.push(curr.right);
+            if(curr.left != null) st.push(curr.left);
+            if(curr.right != null) st.push(curr.right);
         }
         while(!result.isEmpty()){
-            sinkHelper(result.pop());
+            TreeNode curr = result.pop();
+            System.out.println("now visiting " + curr.val);
+            sinkHelper(curr);
         }
     }
 
     private static void sinkHelper(TreeNode node) {
-        if(node.val != 0) return;
+        if(node == null || node.val != 0) return;
         if(node.left != null && node.left.val != 0){
             int tmp = node.val;
             node.val = node.left.val;
@@ -58,9 +60,10 @@ public class SinkZero {
     public static void main(String[] args){
         SinkZero me = new SinkZero();
         TreeNode root = me.new TreeNode(0);
-        root.left = me.new TreeNode(1);
-        root.right = me.new TreeNode(2);
-        root.left.right = me.new TreeNode(3);
+        root.left = me.new TreeNode(0);
+        root.right = me.new TreeNode(0);
+        root.right.left = me.new TreeNode(0);
+        root.right.left.right = me.new TreeNode(1);
         sinkZero(root);
         levelPrint(root);
     }

@@ -11,6 +11,5 @@ public class Solution {
     		reach = Math.max(reach, i + A[i]);
     	}
     	return count;
-        
     }
 }

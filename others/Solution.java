@@ -30,7 +30,7 @@ public class Solution {
 //        System.out.println("true");
 //        System.out.println(-Integer.MIN_VALUE);
 //        System.out.println(getNeg(Integer.MAX_VALUE));
-        System.out.println(~Integer.MAX_VALUE);
+        System.out.println(~Integer.MIN_VALUE);
 //        System.out.println(flipSign(100));
 
     }

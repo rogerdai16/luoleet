@@ -21,7 +21,7 @@ public class Solution {
         }
         for(Map.Entry<String, LinkedList<String>> e : map.entrySet()){
             if(e.getValue().size() < 2) continue;
-            for(String s : e.getValue()) rst.add(s);
+            rst.addAll(e.getValue());
         }
         return rst;
     }

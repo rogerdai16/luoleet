@@ -10,9 +10,7 @@ public class Solution {
 				return 0;
 			}
 		});
-		for (Interval i: intervals) {
-			if (i != null) pq.offer(i);
-		}
+		for (Interval i: intervals) if (i != null) pq.offer(i);
 		while (pq.size() > 0) {
 			Interval i = pq.poll();
 			if (rst.size() == 0 || i.start > rst.peekLast().end) {

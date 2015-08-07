@@ -10,7 +10,7 @@ public class Solution {
             }
         }
         for(int i = len - 1; i > 0; i--){
-            if(subrst[i] > 9) subrst[i - 1] += subrst[i] / 10;
+            subrst[i - 1] += subrst[i] / 10;
             subrst[i] = subrst[i] % 10;
         }
         StringBuilder sb = new StringBuilder();

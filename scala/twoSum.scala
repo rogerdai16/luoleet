@@ -1,5 +1,5 @@
 def twoSum(arr: Array[Int], target: Int): Boolean = {
-    if(arr == null || arr.length == 0) false
+	if(arr == null || arr.length == 0) false
 	val hs = new java.util.HashSet[Int]
 	for(ele <- arr) if(hs.contains(target - ele)) return true else hs.add(ele)
 	false

@@ -17,8 +17,8 @@ void permute(char *a, int l, int r)
 */
 public class Solution {
     
-    private ArrayList<ArrayList<Integer>> permuteHelper(ArrayList<Integer> all){
-        ArrayList<ArrayList<Integer>> localRst = new ArrayList<ArrayList<Integer>>();
+    private List<List<Integer>> permuteHelper(List<Integer> all){
+        List<List<Integer>> localRst = new ArrayList<List<Integer>>();
         if(all.size() == 0) return localRst;
         if(all.size() == 1){
             localRst.add(all);
@@ -26,7 +26,7 @@ public class Solution {
         }
         for(int i = 0; i < all.size(); i++){
             Integer curr = all.remove(i);
-            ArrayList<ArrayList<Integer>> subRst = permuteHelper(all);
+            List<List<Integer>> subRst = permuteHelper(all);
             for(int j = 0; j < subRst.size(); j++){
                 ArrayList tmp = new ArrayList<Integer>(subRst.get(j));
                 tmp.add(0, curr);
@@ -38,10 +38,10 @@ public class Solution {
         
     }
     
-    public ArrayList<ArrayList<Integer>> permute(int[] nums) {
-        ArrayList<ArrayList<Integer>> rst = new ArrayList<ArrayList<Integer>>();
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> rst = new ArrayList<List<Integer>>();
         if(nums == null || nums.length == 0) return rst;
-        ArrayList<Integer> all = new ArrayList<Integer>();
+        List<Integer> all = new ArrayList<Integer>();
         for(int i : nums) all.add(i);
         rst = permuteHelper(all);
         return rst;

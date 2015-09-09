@@ -11,8 +11,6 @@ public class Solution {
         path.removeLast();
     }
     
-    
-    
     public LinkedList<LinkedList<Integer>> subsets(int[] nums) {
         LinkedList<LinkedList<Integer>> rst = new LinkedList<LinkedList<Integer>>();
         LinkedList<Integer> path = new LinkedList<Integer>();

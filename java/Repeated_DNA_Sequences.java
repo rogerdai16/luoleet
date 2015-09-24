@@ -1,16 +1,17 @@
 public class Solution {
     public List<String> findRepeatedDnaSequences(String s) {
-        List<String> rst = new LinkedList<String>();
-        if(s == null || s.length() == 0) return rst;
-        HashMap<String, Integer> map = new HashMap<String, Integer>();
-        for(int i = 0; i <= s.length() - 10; i++){
-            String curr = s.substring(i, i + 10);
-            if(!map.containsKey(curr)) map.put(curr, 1);
-            else{
-                if(map.get(curr) == 1) rst.add(curr);
-                map.put(curr, map.get(curr) + 1);
+        List<String> ans = new ArrayList<>();
+        if (s.length() < 10)  return ans;
+        Map<Integer, Integer> map = new HashMap<>();
+        int h = 0;
+        for (int i = 0; i < s.length(); i++) {
+            h = (h << 3 & 0x3FFFFFFF) | (s.charAt(i) & 7);// 0x3FFFFFFF means 30 bits, Just keep rolling
+            if(i < 9) continue;
+            map.put(h, map.getOrDefault(h, 0) + 1);
+            if (map.getOrDefault(h, 0) == 2) {
+                ans.add(s.substring(i - 9, i + 1));
             }
         }
-        return rst;
+        return ans;
     }
 }

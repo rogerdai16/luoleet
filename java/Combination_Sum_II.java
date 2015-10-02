@@ -6,8 +6,8 @@ public class Solution {
             return;
         }
         if(idx >= candidates.length || candidates[idx] > gap) return;
-        while(idx < candidates.length){
-            if(candidates[idx] > gap) return;
+        while(idx < candidates.length && candidates[idx] <= gap){
+            // if(candidates[idx] > gap) return;
             path.add(candidates[idx]);
             dfs(candidates, path, idx + 1, rst, gap - candidates[idx]);
             path.remove(path.size() - 1);
